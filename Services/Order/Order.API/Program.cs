@@ -1,4 +1,10 @@
+using CommonFiles;
+using Microsoft.EntityFrameworkCore;
+using Order.Data.Context;
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<OrderDBContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DBConnection")));
 
 // Add services to the container.
 
@@ -11,6 +17,13 @@ builder.Services.AddSwaggerGen();
 
 
 var app = builder.Build();
+
+
+var deployDatabaseChanges= app.Configuration.GetValue<bool>("DisployDatabaseChanges");
+if (deployDatabaseChanges)
+{
+    MigrationManager.UpdateDatabase<OrderDBContext>(app);
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
