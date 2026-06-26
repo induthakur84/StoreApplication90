@@ -19,6 +19,7 @@
     <Folder Include="Services\" />
   </ItemGroup>
 	<ItemGroup>
+	  <ProjectReference Include="..\..\..\CommonFiles\CommonFiles.csproj" />
 	  <ProjectReference Include="..\Order.Domain\Order.Domain.csproj" />
 	  <ProjectReference Include="..\Order.Dto\Order.Dto.csproj" />
 	</ItemGroup>
