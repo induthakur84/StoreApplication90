@@ -1,8 +1,6 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Order.Data.Interfaces;
 using Order.Dto.DTO.Request;
-using Order.Dto.DTO.Response;
 
 namespace Order.API.Controllers
 {
