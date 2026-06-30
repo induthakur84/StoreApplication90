@@ -11,7 +11,11 @@ namespace Order.Data.Context
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<UserProfile> UserProfiles { get; set; }
 
+        public DbSet<OrderModel> Orders { get; set; }
+        public DbSet<Product> Product { get; set; }
+        public DbSet<Category> Category { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
